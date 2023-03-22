@@ -1,0 +1,194 @@
+@import "../../../styles.scss";
+
+.login-page {
+    // Image style
+    >img {
+        // Remove annoying bottom white thing
+        margin-bottom: -4px;
+
+        // Take full width and height
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+
+        // Make position absolute so it is displayed below the other items 
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+    }
+
+    // Container for the page to vertically center it
+    >div {
+        // Display content above the image
+        z-index: 5;
+
+        // Vertically center a div
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        // Make it take full width
+        width: 100%;
+
+        // The page containing the input fields
+        >div {
+            // Horizontally center the page 
+            margin-left: auto;
+            margin-right: auto;
+
+            // Give it a width
+            width: 800px;
+
+            // The blurred linear background of the page
+            >.background {
+                // Set it's width
+                width: 800px;
+
+                // Make position absolute so it gets displayed below content
+                position: absolute;
+                z-index: 2;
+
+                // Give it a background color
+                background: linear-gradient(125deg, rgba($color-primary, 0.55), rgba($color-primary, 0.5), rgba($color-light, 0.5), rgba($color-light, 0.4));
+
+                // Blur the background
+                filter: blur(1.4px);
+
+                // Make height 100% of page
+                height: 100%;
+
+                // Move the background to the top to take into account the margin of the content
+                margin-top: -$spacing-largest;
+
+                // Round corners
+                border-radius: $spacing-large;
+            }
+
+            // The div containing the inputs and titles
+            >.content {
+                // Set position so it gets displayed above the background
+                position: relative;
+                z-index: 10;
+
+                // Some spacing
+                margin: $spacing-largest;
+
+                // Flex the elements to the left
+                display: flex;
+
+                // Left section
+                >.left {
+
+                    // Welcome back text
+                    >div:nth-child(1) {
+                        font-size: $spacing-largest;
+                        color: $color-light;
+                        text-shadow: 1px 1px $color-dark;
+                    }
+
+                    // Quote
+                    >div:nth-child(2) {
+                        font-size: $spacing-larger;
+                        color: $color-light;
+                        text-shadow: 1px 1px $color-dark;
+                        margin-top: $spacing-largest + $spacing-larger;
+                    }
+
+                    // Some spacing
+                    padding-right: $spacing-larger;
+
+                    // Set width 
+                    width: 50%;
+                }
+
+                // Right section
+                >.right {
+
+                    width: 50%;
+
+                    // Login title
+                    >div {
+                        font-size: $spacing-largest;
+                        color: $color-light;
+                        text-shadow: 1px 1px $color-dark;
+
+                        // the word "or"
+                        >span{
+                            font-size: $spacing-larger;
+                        }
+                        // Sign up link
+                        >a{
+                            font-size: $spacing-larger;
+                            color: $color-primary;
+                            text-decoration: none;
+                            display: inline-block;
+                            &:hover{
+                                transform: scale(1.05);
+                                text-shadow: 1px 1px 1px $color-dark;
+                            }
+                        }
+                    }
+
+                    // Inputs and button styles
+                    >input,
+                    >button {
+                        // Set font size
+                        font-size: $spacing-large;
+                        
+                        // Some spacing
+                        padding: $spacing-normal;
+                        margin-top: $spacing-largest;
+                        
+                        // Set width
+                        width: 100%;
+
+                        // Remove ugly default border
+                        border: none;
+
+                        // Round corners
+                        border-radius: $spacing-small;
+                        
+                        // Give it some shadow
+                        box-shadow: 1px 1px 1px 0px rgba($color-dark, 0.4);
+
+                        // Smooth animations
+                        transition: all 0.4s;
+
+                        // On focus
+                        &:focus,
+                        &:hover {
+                            // Remove outline
+                            outline: none;
+                        }
+                    }
+
+                    // Input style
+                    >input {
+                        // Some spacing inside
+                        padding-left: $spacing-large;
+                        
+                        // Give it a background color
+                        background: linear-gradient(135deg, rgba($color-light, 0.6), rgba($color-light, 0.3));
+                    }
+
+                    // Login button
+                    >button {
+                        // Background color
+                        background-color: $color-primary;
+
+                        // On focus
+                        &:focus,
+                        &:hover {
+                            // Set cursor as pointer
+                            cursor: pointer;
+                            
+                            // Change background
+                            background-color: rgba($color-primary, 0.8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
