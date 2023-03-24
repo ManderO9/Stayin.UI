@@ -10,9 +10,9 @@
                 </div>
                 <div class="right">
                     <div>Log in <span>or</span>&nbsp;<a href="/signup">Sign up ?</a></div>
-                    <input type="email" placeholder="email"><br>
-                    <input type="password" placeholder="password"><br>
-                    <button>Login</button>
+                    <input type="email" placeholder="email" id="loginemail"><br>
+                    <input type="password" placeholder="password" id="loginpassword"><br>
+                    <button (click)="Login($event)">Login</button>
                 </div>
             </div>
         </div>
