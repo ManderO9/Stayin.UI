@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserLoginModel } from '../../Models/UserLoginModel';
-import { ApiRoutes } from '../../Routes/ApiRoutes';
-import { ApiResponseWithBody } from 'src/app/Models/ApiResponse';
-import { firstValueFrom } from 'rxjs';
-import { AppConsts } from 'src/app/Routes/AppConsts';
-
 import { Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
+import { ApiResponseWithBody } from 'src/app/Models/ApiResponse';
+import { AppConsts } from 'src/app/Routes/AppConsts';
+import { ApiRoutes } from '../../Routes/ApiRoutes';
+import { UserLoginModel } from '../../Models/UserLoginModel';
 
 @Component({
   selector: 'app-login',
@@ -19,14 +18,18 @@ export class LoginComponent {
   // Whether we are currently logging in
   mLoggingIn: boolean = false;
 
+  // List of errors to display on the page if any
+  errors: string[] = [];
+
   constructor(private httpClient: HttpClient,
     private router: Router) { }
 
-  private ShowErrors(errors: string[]) {
-    console.log(errors);
+  // Displays errors to the user
+  private ShowErrors(newErrors: string[]) {
+    this.errors = newErrors;
   }
 
-
+  // Logs the user into the app
   public async Login(event: Event) {
     // If we are already performining log in
     if (this.mLoggingIn)

@@ -19,7 +19,7 @@
     }
 
     // Container for the page to vertically center it
-    >div {
+    >div:nth-child(2) {
         // Display content above the image
         z-index: 5;
 
@@ -190,5 +190,24 @@
                 }
             }
         }
+    }
+
+    // Errors container
+    >div.errors{
+        // Position it in the bottom right corner
+        position: absolute;
+        bottom: $spacing-large;
+        right: $spacing-large;
+        z-index: 10;
+    
+        // The error inside the container
+        >div{
+            padding: $spacing-small $spacing-normal;
+            background-color: rgba($color-dark, 0.7);
+            border-radius: $spacing-small;
+            margin-top: $spacing-normal;
+            color:$color-light;
+        }
+    
     }
 }

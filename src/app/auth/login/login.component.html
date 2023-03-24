@@ -10,11 +10,14 @@
                 </div>
                 <div class="right">
                     <div>Log in <span>or</span>&nbsp;<a href="/signup">Sign up ?</a></div>
-                    <input type="email" placeholder="email" id="loginemail"><br>
-                    <input type="password" placeholder="password" id="loginpassword"><br>
+                    <input type="email" placeholder="email" id="loginemail" required><br>
+                    <input type="password" placeholder="password" id="loginpassword" minlength="5"><br>
                     <button (click)="Login($event)">Login</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="errors">
+        <div *ngFor="let error of errors">{{error}}</div>
     </div>
 </div>
