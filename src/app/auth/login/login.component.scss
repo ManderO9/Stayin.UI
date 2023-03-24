@@ -202,10 +202,17 @@
     
         // The error inside the container
         >div{
+            // Give it some spacing
             padding: $spacing-small $spacing-normal;
-            background-color: rgba($color-dark, 0.7);
-            border-radius: $spacing-small;
             margin-top: $spacing-normal;
+            
+            // Set background color
+            background-color: rgba($color-dark, 0.7);
+            
+            // Round corners
+            border-radius: $spacing-small;
+            
+            // Make text white
             color:$color-light;
         }
     
