@@ -36,6 +36,9 @@ export class LoginComponent {
       // Don't do anything
       return;
 
+    // Set login in to true
+    this.mLoggingIn = true;
+
     // Set button content indicating we are performing log in
     (event.target as HTMLElement).textContent = "Logging in ...";
 
@@ -77,6 +80,9 @@ export class LoginComponent {
       // Display errors
       this.ShowErrors(result.Errors!);
     }
+
+    // Set login in to flase
+    this.mLoggingIn = false;
 
     // Set button content back to log in
     (event.target as HTMLElement).textContent = "Log in";

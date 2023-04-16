@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 
 .signup-page {
+
     // Image style
     >img {
         // Remove annoying bottom white thing
@@ -114,16 +115,18 @@
                         text-shadow: 1px 1px $color-dark;
 
                         // the word "or"
-                        >span{
+                        >span {
                             font-size: $spacing-larger;
                         }
+
                         // Log in link
-                        >a{
+                        >a {
                             font-size: $spacing-larger;
                             color: $color-primary;
                             text-decoration: none;
                             display: inline-block;
-                            &:hover{
+
+                            &:hover {
                                 transform: scale(1.05);
                                 text-shadow: 1px 1px 1px $color-dark;
                             }
@@ -135,11 +138,11 @@
                     >button {
                         // Set font size
                         font-size: $spacing-large;
-                        
+
                         // Some spacing
                         padding: $spacing-normal;
                         margin-top: $spacing-large;
-                        
+
                         // Set width
                         width: 100%;
 
@@ -148,7 +151,7 @@
 
                         // Round corners
                         border-radius: $spacing-small;
-                        
+
                         // Give it some shadow
                         box-shadow: 1px 1px 1px 0px rgba($color-dark, 0.4);
 
@@ -167,7 +170,7 @@
                     >input {
                         // Some spacing inside
                         padding-left: $spacing-large;
-                        
+
                         // Give it a background color
                         background: linear-gradient(135deg, rgba($color-light, 0.6), rgba($color-light, 0.3));
                     }
@@ -182,7 +185,7 @@
                         &:hover {
                             // Set cursor as pointer
                             cursor: pointer;
-                            
+
                             // Change background
                             background-color: rgba($color-primary, 0.8);
                         }
@@ -193,28 +196,28 @@
     }
 
     // Errors container
-    >div.errors{
+    >div.errors {
         // Position it in the bottom right corner
         position: absolute;
         bottom: $spacing-large;
         right: $spacing-large;
         z-index: 10;
-    
+
         // The error inside the container
-        >div{
+        >div {
             // Give it some spacing
             padding: $spacing-small $spacing-normal;
             margin-top: $spacing-normal;
-            
+
             // Set background color
             background-color: rgba($color-dark, 0.7);
-            
+
             // Round corners
             border-radius: $spacing-small;
-            
+
             // Make text white
-            color:$color-light;
+            color: $color-light;
         }
-    
+
     }
 }

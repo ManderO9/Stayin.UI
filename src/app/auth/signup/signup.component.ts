@@ -37,6 +37,9 @@ export class SignupComponent {
       // Don't do anything
       return;
 
+      // Set signing in to true
+    this.mSigningIn = true;
+
     // Set button content indicating we are performing sign up
     (event.target as HTMLElement).textContent = "Signing in ...";
 
@@ -81,6 +84,9 @@ export class SignupComponent {
       // Display errors
       this.ShowErrors(result.Errors!);
     }
+
+    // Set signin in to false
+    this.mSigningIn = false;
 
     // Set button content back to sign up
     (event.target as HTMLElement).textContent = "Sign up";
